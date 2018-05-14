@@ -8,8 +8,6 @@ function searchwiki(term){
   
   
   $.getJSON(searchTerm, function(data){
-    console.log(data);
-    console.log(searchTerm);
     if (data.type === "disambiguation"){
     //if (data.description === "Disambiguation page providing links to articles with similar titles" || data.description === "Wikipedia disambiguation page"){
       $("#title").html("Disambiguation Page");
@@ -24,7 +22,8 @@ function searchwiki(term){
     $("#linkToPage").html("<a href=" + searchURL + " target=_blank>Link to Full Article</a>");
     };
   }).fail(function(){
-    console.log("WRONG! WRONG! WRONG!");
+   $("#title").html(term);
+   $("#articlesummary").html("No article was found with this title.");
   });
   
 }
