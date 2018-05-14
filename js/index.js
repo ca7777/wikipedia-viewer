@@ -9,7 +9,7 @@ function searchwiki(term){
   
   $.getJSON(searchTerm, function(data){
     console.log(data.description);
-    if (data.description === "Wikimedia disambiguation page"){
+    if (data.description === "Disambiguation page providing links to articles with similar titles"){
       $("#title").html("Disambiguation Page");
       $("#articlesummary").html("Consider refining your search term.<br>" + data.extract_html)
        $("#linkToPage").html("<a href=" + searchURL + " target=_blank>Click for Possible Matches</a>");
