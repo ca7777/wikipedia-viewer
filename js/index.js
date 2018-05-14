@@ -23,6 +23,8 @@ function searchwiki(term){
     
     $("#linkToPage").html("<a href=" + searchURL + " target=_blank>Link to Full Article</a>");
     };
+  }).fail(function(){
+    console.log("WRONG! WRONG! WRONG!");
   });
   
 }
