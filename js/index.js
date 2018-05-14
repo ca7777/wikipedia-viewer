@@ -22,8 +22,12 @@ function searchwiki(term){
     $("#linkToPage").html("<a href=" + searchURL + " target=_blank>Link to Full Article</a>");
     };
   }).fail(function(){
-   $("#title").html(term);
-   $("#articlesummary").html("No article was found with this title.");
+    if (term.length > 0)
+      $("#title").html(term);
+    else
+      $("#title").html("Page Not Found!");
+    $("#articlesummary").html("No article was found with this title.");
+    $("#linkToPage").html("");
   });
   
 }
