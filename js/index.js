@@ -8,7 +8,7 @@ function searchwiki(term){
   
   
   $.getJSON(searchTerm, function(data){
-    
+    console.log(data.description);
     if (data.description === "Wikimedia disambiguation page"){
       $("#title").html("Disambiguation Page");
       $("#articlesummary").html("Consider refining your search term.<br>" + data.extract_html)
