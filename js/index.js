@@ -10,7 +10,8 @@ function searchwiki(term){
   $.getJSON(searchTerm, function(data){
     console.log(data);
     console.log(searchTerm);
-    if (data.description === "Disambiguation page providing links to articles with similar titles" || data.description === "Wikipedia disambiguation page"){
+    if (data.type === "disambiguation"){
+    //if (data.description === "Disambiguation page providing links to articles with similar titles" || data.description === "Wikipedia disambiguation page"){
       $("#title").html("Disambiguation Page");
       $("#articlesummary").html("Consider refining your search term.<br>" + data.extract_html)
        $("#linkToPage").html("<a href=" + searchURL + " target=_blank>Click for Possible Matches</a>");
